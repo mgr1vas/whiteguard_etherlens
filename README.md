@@ -13,7 +13,7 @@
 
 ## How to Run (Local Development)
 Because Whiteguard MVP is a completely static frontend application, no complex installation is required.
-1. Clone the repository: `git clone https://github.com/mgr1vas/whiteguard.git`
+1. Clone the repository: `git clone https://github.com/mgr1vas/whiteguard_etherlens.git`
 2. Open the directory.
 3. Simply double-click `index.html` to run it in your browser.
 
