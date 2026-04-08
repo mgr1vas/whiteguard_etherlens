@@ -1,0 +1,29 @@
+{% if error %}
+    <div class="p-4 bg-red-900/50 border border-red-500 text-red-300 rounded-lg">
+        {{ error }}
+    </div>
+{% else %}
+    {% if is_safe %}
+        <div class="p-6 rounded-xl border bg-emerald-900/20 border-emerald-500/50 flex items-start space-x-4">
+            <div class="p-3 rounded-full bg-emerald-500/20 text-emerald-400">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-emerald-400">Clean & Safe</h3>
+                <p class="text-white mt-1">No threats detected for: <span class="font-mono text-sm text-slate-400">{{ target }}</span></p>
+                <p class="text-slate-400 text-sm mt-2">Checked against multiple threat intelligence engines.</p>
+            </div>
+        </div>
+    {% else %}
+        <div class="p-6 rounded-xl border bg-red-900/20 border-red-500/50 flex items-start space-x-4">
+            <div class="p-3 rounded-full bg-red-500/20 text-red-400">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-red-400">Malicious Threat Detected</h3>
+                <p class="text-white mt-1">Warning! Phishing/Malware found in: <span class="font-mono text-sm text-slate-400">{{ target }}</span></p>
+                <p class="text-slate-400 text-sm mt-2">Do not visit this URL or share it with your team.</p>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}
