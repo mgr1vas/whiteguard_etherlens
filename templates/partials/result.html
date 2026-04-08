@@ -1,28 +1,28 @@
 {% if error %}
-    <div class="p-4 bg-red-900/50 border border-red-500 text-red-300 rounded-lg">
+    <div class="p-4 bg-red-900/30 border border-red-500/50 text-red-300 rounded-xl shadow-[0_0_15px_rgba(220,38,38,0.1)]">
         {{ error }}
     </div>
 {% else %}
     {% if is_safe %}
-        <div class="p-6 rounded-xl border bg-emerald-900/20 border-emerald-500/50 flex items-start space-x-4">
-            <div class="p-3 rounded-full bg-emerald-500/20 text-emerald-400">
+        <div class="p-6 rounded-xl border bg-emerald-950/40 border-emerald-500/30 flex items-start space-x-5 shadow-[0_0_20px_rgba(16,185,129,0.1)]">
+            <div class="p-3 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
             <div>
-                <h3 class="text-xl font-bold text-emerald-400">Clean & Safe</h3>
-                <p class="text-white mt-1">No threats detected for: <span class="font-mono text-sm text-slate-400">{{ target }}</span></p>
-                <p class="text-slate-400 text-sm mt-2">Checked against multiple threat intelligence engines.</p>
+                <h3 class="text-xl font-bold text-emerald-400 drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]">Clean & Safe</h3>
+                <p class="text-slate-300 mt-1">No threats detected for: <span class="font-mono text-sm text-slate-500 ml-1">{{ target }}</span></p>
+                <p class="text-slate-500 text-sm mt-2">Target was checked against global threat intel databases.</p>
             </div>
         </div>
     {% else %}
-        <div class="p-6 rounded-xl border bg-red-900/20 border-red-500/50 flex items-start space-x-4">
-            <div class="p-3 rounded-full bg-red-500/20 text-red-400">
+        <div class="p-6 rounded-xl border bg-red-950/40 border-red-500/40 flex items-start space-x-5 shadow-[0_0_30px_rgba(220,38,38,0.15)] animate-pulse">
+            <div class="p-3 rounded-full bg-red-500/10 text-red-500 border border-red-500/30">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
             </div>
             <div>
-                <h3 class="text-xl font-bold text-red-400">Malicious Threat Detected</h3>
-                <p class="text-white mt-1">Warning! Phishing/Malware found in: <span class="font-mono text-sm text-slate-400">{{ target }}</span></p>
-                <p class="text-slate-400 text-sm mt-2">Do not visit this URL or share it with your team.</p>
+                <h3 class="text-xl font-bold text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]">Malicious Threat Detected</h3>
+                <p class="text-slate-300 mt-1">Warning! Phishing/Malware found in: <span class="font-mono text-sm text-slate-500 ml-1">{{ target }}</span></p>
+                <p class="text-red-400/80 text-sm mt-2 font-medium">Do not visit this URL or share it with your team.</p>
             </div>
         </div>
     {% endif %}
